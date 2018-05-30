@@ -156,6 +156,20 @@ public class HomeActivity extends AppCompatActivity
 
         userICRepo = new UserICRepo(this);
 
+        user.yyi = "yyi1159";
+        user.email = "andrea.gabana@infocamere.it";
+        user.name = "Andrea";
+        user.surname = "Gabana";
+        user.phone_fix = "8538";
+        user.setPhone_mobile("3401594597");
+        user.setSede("Padova");
+        user.setCdr("59100");
+        user.setOffice("PD-414 open");
+        user.setMatricola("0623");
+        userICRepo.insert(user);
+
+        userICRepo = new UserICRepo(this);
+
         user.yyi = "yyi0192";
         user.email = "giovanni.secchiati@infocamere.it";
         user.name = "Giovanni";
