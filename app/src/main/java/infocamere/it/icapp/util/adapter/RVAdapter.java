@@ -23,7 +23,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import infocamere.it.icapp.R;
-import infocamere.it.icapp.SipertTabActivity;
+import infocamere.it.icapp.sipert.SipertTabActivity;
 import infocamere.it.icapp.model.ItemUI;
 import infocamere.it.icapp.search.SearchableActivity;
 import infocamere.it.icapp.splash.SplashActivity;

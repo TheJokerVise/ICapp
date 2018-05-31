@@ -52,7 +52,7 @@
             android:label="@string/title_activity_user_profile"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".SipertTabActivity"
+            android:name=".sipert.SipertTabActivity"
             android:label="@string/title_activity_sipert_tab"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
