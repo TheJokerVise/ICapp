@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import infocamere.it.icapp.R;
+import infocamere.it.icapp.async.RendererServicesTask;
 import infocamere.it.icapp.model.ItemUI;
 import infocamere.it.icapp.model.ServiceIC;
 import infocamere.it.icapp.model.UserIC;
@@ -55,6 +56,7 @@ public class HomeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("IC APP");
         setSupportActionBar(toolbar);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -101,17 +103,20 @@ public class HomeActivity extends AppCompatActivity
         */
         mRecyclerView = (RecyclerView) findViewById(R.id.rv);
 
+        new RendererServicesTask(mRecyclerView, mLayoutManager, this).execute();
+
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
+        // mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        // mLayoutManager = new LinearLayoutManager(this);
+        // mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        RVAdapter adapter = new RVAdapter(generateItemUi());
-        mRecyclerView.setAdapter(adapter);
+        // RVAdapter adapter = new RVAdapter(generateItemUi());
+        //
+        // mRecyclerView.setAdapter(adapter);
     }
 
     private void insertDummy(){
