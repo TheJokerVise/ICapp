@@ -50,11 +50,10 @@
         <activity
             android:name=".useric.UserProfileActivity"
             android:label="@string/title_activity_user_profile"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".sipert.SipertTabActivity"
-            android:label="@string/title_activity_sipert_tab"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_sipert_tab"/>
     </application>
 
 </manifest>

@@ -1,3 +1,9 @@
+/*
+ * Copyright (c)
+ * Created by Luca Visentin - yyi4216
+ * 31/05/18 15.05
+ */
+
 package infocamere.it.icapp.sipert;
 
 import android.app.SearchManager;
@@ -22,9 +28,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import infocamere.it.icapp.AppBaseActivity;
 import infocamere.it.icapp.R;
 
-public class SipertTabActivity extends AppCompatActivity {
+public class SipertTabActivity extends AppBaseActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -46,8 +53,8 @@ public class SipertTabActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sipert_tab);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -128,9 +135,22 @@ public class SipertTabActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_sipert_tab, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
+            View rootView = null;
+
+            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
+                rootView = inflater.inflate(
+                        R.layout.fragment_sipert_saldi, container, false);
+            }
+            else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
+                rootView = inflater.inflate(
+                        R.layout.fragment_sipert_timbrature, container, false);
+            }
+            else if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
+                rootView = inflater.inflate(
+                        R.layout.fragment_sipert_anomalie, container, false);
+            }
+
             return rootView;
         }
     }
