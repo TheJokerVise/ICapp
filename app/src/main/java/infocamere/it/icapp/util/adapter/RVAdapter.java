@@ -23,6 +23,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import infocamere.it.icapp.R;
+import infocamere.it.icapp.SipertTabActivity;
 import infocamere.it.icapp.model.ItemUI;
 import infocamere.it.icapp.search.SearchableActivity;
 import infocamere.it.icapp.splash.SplashActivity;
@@ -92,13 +93,13 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ItemUIViewHolder> 
                 switch (position) {
 
                     case 0:
-                        Intent presenze = new Intent(v.getContext(), SearchableActivity.class);
+                        Intent presenze = new Intent(v.getContext(), SipertTabActivity.class);
                         v.getContext().startActivity(presenze);
 
                         break;
 
                     case 1:
-                        Intent trasferte = new Intent(v.getContext(), SplashActivity.class);
+                        Intent trasferte = new Intent(v.getContext(), SearchableActivity.class);
                         v.getContext().startActivity(trasferte);
 
                         break;
