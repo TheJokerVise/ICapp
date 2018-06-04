@@ -8,10 +8,13 @@
     <color name="colorPrimaryDark">#3377D8</color>
     <color name="colorAccent">#E78EA4</color>
     <color name="colorPrimaryZebra">#FFFFFF</color>
-    <color name="colorSecondaryZebra">#F6F6F6</color>
+    <color name="colorSecondaryZebra">#f6f6f6</color>
+    <color name="colorSecondaryZebraLight">#EEEEEE</color>
     <color name="red">#FF0000</color>
     <color name="yellow">#FFFF00</color>
-    <color name="green">#008000</color>
+    <color name="greenic">#2CBC36</color>
+    <color name="infocamereintranet">#095EAF</color>
+    <color name="redic">#E83E00</color>
 
     <color name="black_overlay">#66000000</color>
 </resources>
