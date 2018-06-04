@@ -34,8 +34,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/roboto"
                         android:text="FERIE"
                         android:textColor="@color/infocamereintranet"
@@ -72,12 +72,12 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/ferie_sec_dettagli"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/colorSecondaryZebraLight">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -87,31 +87,34 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                >
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Residuo anni precedenti"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".35"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="-2,40"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -125,26 +128,28 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Anno corrente"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
-                                    android:layout_weight=".35"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="100"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -158,26 +163,28 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Godute anno corrente"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
-                                    android:layout_weight=".35"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="123"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -209,8 +216,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/roboto"
                         android:text="PAR"
                         android:textColor="@color/infocamereintranet"
@@ -267,26 +274,28 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Residuo anni precedenti"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
-                                    android:layout_weight=".35"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="16"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -300,26 +309,28 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Anno corrente"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
-                                    android:layout_weight=".35"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="-2"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -333,26 +344,28 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Godute anno corrente"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
-                                    android:layout_weight=".35"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="98"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -384,8 +397,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/roboto"
                         android:text="BANCA ORE"
                         android:textColor="@color/infocamereintranet"
@@ -442,26 +455,28 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Residuo anni precedenti"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
-                                    android:layout_weight=".35"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="16"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -475,26 +490,28 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Anno corrente"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
-                                    android:layout_weight=".35"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="-2"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -508,26 +525,28 @@
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight=".65"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
+                                    android:layout_weight=".70"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingStart="16dp"
                                     android:text="Godute anno corrente"
                                     android:textColor="@color/infocamereintranet"
-                                    android:textSize="20sp"
+                                    android:textSize="18sp"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
-                                    android:layout_weight=".35"
+                                    android:layout_weight=".30"
                                     android:fontFamily="@font/roboto"
+                                    android:paddingEnd="16dp"
                                     android:text="98"
+                                    android:textAlignment="textEnd"
                                     android:textColor="@color/infocamereintranet"
                                     android:textSize="20sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
