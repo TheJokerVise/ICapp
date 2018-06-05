@@ -12,6 +12,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 
@@ -20,13 +21,26 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import infocamere.it.icapp.AppBaseActivity;
 import infocamere.it.icapp.R;
@@ -77,6 +91,8 @@ public class SipertTabActivity extends AppBaseActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        requestWithSomeHttpHeaders();
 
     }
 
@@ -178,5 +194,79 @@ public class SipertTabActivity extends AppBaseActivity {
             // Show 3 total pages.
             return 3;
         }
+    }
+
+    public void detailFerie_onClick(View view) {
+        TextView detail = (TextView) view;
+        CardView detailFerieCV = (CardView) findViewById(R.id.detail_ferie_cv);
+        if (detail.getText().toString().contains("Nascondi")) {
+            detail.setText("Dettagli");
+            detailFerieCV.setVisibility(View.GONE);
+        }
+        else {
+            detail.setText("Nascondi");
+            detailFerieCV.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void detailPar_onClick(View view) {
+        TextView detail = (TextView) view;
+        CardView detailParCV = (CardView) findViewById(R.id.detail_par_cv);
+        if (detail.getText().toString().contains("Nascondi")) {
+            detail.setText("Dettagli");
+            detailParCV.setVisibility(View.GONE);
+        }
+        else {
+            detail.setText("Nascondi");
+            detailParCV.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void detailBancaore_onClick(View view) {
+        TextView detail = (TextView) view;
+        CardView detailBancaoreCV = (CardView) findViewById(R.id.detail_bancaore_cv);
+        if (detail.getText().toString().contains("Nascondi")) {
+            detail.setText("Dettagli");
+            detailBancaoreCV.setVisibility(View.GONE);
+        }
+        else {
+            detail.setText("Nascondi");
+            detailBancaoreCV.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void requestWithSomeHttpHeaders() {
+        Log.i("REQUEST", "START");
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "https://aru10.intra.infocamere.it/wssip/saldi/YYI4216";
+        StringRequest postRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        Log.i("Response", response);
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                        Log.d("ERROR","error => "+error.toString());
+                    }
+                }
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("wssipapikey", "1qaz2wsx");
+                params.put("Content-type", "application/json");
+
+                return params;
+            }
+        };
+        queue.add(postRequest);
+
     }
 }

@@ -60,14 +60,27 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <TextView
+                        android:id="@+id/detail_ferie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Dettagli"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:onClick="detailFerie_onClick"/>
+
                 </android.support.constraint.ConstraintLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/detail_ferie_cv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorSecondaryZebraLight">
+                android:background="@color/colorSecondaryZebraLight"
+                android:visibility="gone">
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/ferie_sec_dettagli"
@@ -85,10 +98,10 @@
                             android:orientation="vertical">
 
                             <LinearLayout
+                                android:id="@+id/ll_ferie_ap"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
-                                android:orientation="horizontal"
-                                >
+                                android:orientation="horizontal">
 
                                 <TextView
                                     android:layout_width="0dp"
@@ -121,6 +134,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/ll_ferie_ac"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:orientation="horizontal">
@@ -156,6 +170,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                android:id="@+id/ll_ferie_gac"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:orientation="horizontal">
@@ -242,14 +257,27 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <TextView
+                        android:id="@+id/detail_par"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Dettagli"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:onClick="detailPar_onClick"/>
+
                 </android.support.constraint.ConstraintLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/detail_par_cv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryZebra">
+                android:background="@color/colorPrimaryZebra"
+                android:visibility="gone">
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/par_sec_dettagli"
@@ -423,14 +451,28 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <TextView
+                        android:id="@+id/detail_bancaore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Dettagli"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:onClick="detailBancaore_onClick"/>
+
+
                 </android.support.constraint.ConstraintLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/detail_bancaore_cv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorSecondaryZebraLight">
+                android:background="@color/colorSecondaryZebraLight"
+                android:visibility="gone">
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bancaore_sec_dettagli"
