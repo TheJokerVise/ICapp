@@ -135,4 +135,6 @@
     <string name="tab_text_timbrature">TIMBRATURE</string>
     <string name="tab_text_anomalie">ANOMALIE</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="detail_txt">Dettagli</string>
+    <string name="hide_txt">Nascondi</string>
 </resources>

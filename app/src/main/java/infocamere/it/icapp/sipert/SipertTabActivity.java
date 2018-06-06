@@ -32,18 +32,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import infocamere.it.icapp.AppBaseActivity;
 import infocamere.it.icapp.R;
+import infocamere.it.icapp.model.presenze.Saldi;
 
 public class SipertTabActivity extends AppBaseActivity {
 
@@ -92,8 +99,7 @@ public class SipertTabActivity extends AppBaseActivity {
             }
         });
 
-        requestWithSomeHttpHeaders();
-
+        callSipertSaldi();
     }
 
 
@@ -213,11 +219,11 @@ public class SipertTabActivity extends AppBaseActivity {
         TextView detail = (TextView) view;
         CardView detailParCV = (CardView) findViewById(R.id.detail_par_cv);
         if (detail.getText().toString().contains("Nascondi")) {
-            detail.setText("Dettagli");
+            detail.setText(R.string.detail_txt);
             detailParCV.setVisibility(View.GONE);
         }
         else {
-            detail.setText("Nascondi");
+            detail.setText(R.string.hide_txt);
             detailParCV.setVisibility(View.VISIBLE);
         }
     }
@@ -226,37 +232,47 @@ public class SipertTabActivity extends AppBaseActivity {
         TextView detail = (TextView) view;
         CardView detailBancaoreCV = (CardView) findViewById(R.id.detail_bancaore_cv);
         if (detail.getText().toString().contains("Nascondi")) {
-            detail.setText("Dettagli");
+            detail.setText(R.string.detail_txt);
             detailBancaoreCV.setVisibility(View.GONE);
         }
         else {
-            detail.setText("Nascondi");
+            detail.setText(R.string.hide_txt);
             detailBancaoreCV.setVisibility(View.VISIBLE);
         }
     }
 
-    public void requestWithSomeHttpHeaders() {
+    public void callSipertSaldi() {
         Log.i("REQUEST", "START");
+
+        String url = "";
+
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://aru10.intra.infocamere.it/wssip/saldi/YYI4216";
-        StringRequest postRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>()
-                {
-                    @Override
-                    public void onResponse(String response) {
-                        // response
-                        Log.i("Response", response);
-                    }
-                },
-                new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-                        Log.d("ERROR","error => "+error.toString());
-                    }
+        JSONObject request = new JSONObject();
+
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest(
+                Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject sipertResponse) {
+                ArrayList<Saldi> saldi = null;
+                try {
+                    saldi = SipertResponseFactory.buildSaldi(sipertResponse);
+                    setValueForSaldi(saldi);
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-        ) {
+                // response
+                Log.d("Response", sipertResponse.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // TODO Auto-generated method stub
+                Log.d("ERROR","error => "+error.toString());
+            }
+        })
+
+        {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String>  params = new HashMap<String, String>();
@@ -266,7 +282,57 @@ public class SipertTabActivity extends AppBaseActivity {
                 return params;
             }
         };
-        queue.add(postRequest);
 
+        jsObjRequest.setRetryPolicy(new DefaultRetryPolicy(
+                5000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        // Add the request to the RequestQueue.
+        queue.add(jsObjRequest);
+        Log.i("Saldi", "Added to queue!");
+
+
+    }
+
+    public void setValueForSaldi(ArrayList<Saldi> saldi) {
+        if (saldi != null) {
+            Saldi s;
+            for (int i=0; i<saldi.size(); i++) {
+                s = saldi.get(i);
+                if (s.getProgr() == 1) {
+                   TextView ferie = (TextView) findViewById(R.id.saldo_ferie);
+                   ferie.setText(s.getSaldo());
+                   ferie = (TextView) findViewById(R.id.residuo_ferie);
+                   ferie.setText(s.getResiduoAnnoPrec());
+                   ferie = (TextView) findViewById(R.id.anno_corrente_ferie);
+                   ferie.setText(s.getAnnoCorrente());
+                   ferie = (TextView) findViewById(R.id.godute_corrente_ferie);
+                   ferie.setText(s.getGoduteCorrente());
+                }
+                else if (saldi.get(i).getProgr() == 2) {
+                    TextView par = (TextView) findViewById(R.id.saldo_par);
+                    par.setText(s.getSaldo());
+                    par = (TextView) findViewById(R.id.residuo_par);
+                    par.setText(s.getResiduoAnnoPrec());
+                    par = (TextView) findViewById(R.id.anno_corrente_par);
+                    par.setText(s.getAnnoCorrente());
+                    par = (TextView) findViewById(R.id.godute_corrente_par);
+                    par.setText(s.getGoduteCorrente());
+
+                }
+                else if (saldi.get(i).getProgr() == 3) {
+                    TextView banca = (TextView) findViewById(R.id.saldo_banca_ore);
+                    banca.setText(s.getSaldo());
+                    banca = (TextView) findViewById(R.id.residuo_banca_ore);
+                    banca.setText(s.getResiduoAnnoPrec());
+                    banca = (TextView) findViewById(R.id.anno_corrente_banca_ore);
+                    banca.setText(s.getAnnoCorrente());
+                    banca = (TextView) findViewById(R.id.godute_corrente_banca_ore);
+                    banca.setText(s.getGoduteCorrente());
+
+                }
+            }
+        }
     }
 }
